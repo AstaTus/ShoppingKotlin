@@ -1,6 +1,13 @@
 package com.huizetime.shoppingkotlin.application
 
 import android.app.Application
+import com.huizetime.shoppingkotlin.network.HttpCore
+import com.huizetime.shoppingkotlin.service.ProcessServicePool
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
+import com.orhanobut.logger.Logger.addLogAdapter
+
+
 
 /**
  * Created by chenjunqi on 2017/7/24.
@@ -20,9 +27,23 @@ class ShoppingApp private constructor () : Application() {
         }
     }
 
+    //all of global var
+    val sHttpCore : HttpCore by lazy { HttpCore() }
+    val sProcessServicePool : ProcessServicePool by lazy { ProcessServicePool() }
+
     public override fun onCreate() {
         super.onCreate()
 
 
+        initLogger()
+
+    }
+
+    private fun initGlobals(){
+
+
+    }
+    private fun initLogger(){
+        Logger.addLogAdapter(AndroidLogAdapter())
     }
 }

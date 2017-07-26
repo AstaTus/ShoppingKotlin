@@ -11,7 +11,7 @@ import retrofit2.http.Query
 /**
  * Created by chenjunqi on 2017/7/24.
  */
-public interface LoginService {
+public interface NWLoginApi {
     @POST("coa/app/login.shtml")
-    fun login(@Field("userName") user_name : String, @Field("password") password : String) : Observable<HttpResult<LoginEntity>>
+    fun <T> login(@Field("userName") user_name : String, @Field("password") password : String) : Observable<HttpResult<T>>
 }
