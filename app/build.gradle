@@ -2,9 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+
 android {
     compileSdkVersion 26
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.huizetime.shoppingkotlin"
         minSdkVersion 19
@@ -19,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+kapt {
+    generateStubs = true
 }
 
 dependencies {
@@ -38,4 +42,10 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.1.2"
 
     implementation 'com.orhanobut:logger:2.1.1'
+
+    compile 'com.google.dagger:dagger-android:2.11'
+    compile 'com.google.dagger:dagger-android-support:2.11'
+    kapt  'com.google.dagger:dagger-android-processor:2.11'
+    kapt 'com.google.dagger:dagger-compiler:2.11'
+
 }

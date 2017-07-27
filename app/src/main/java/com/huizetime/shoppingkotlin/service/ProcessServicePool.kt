@@ -5,27 +5,27 @@ package com.huizetime.shoppingkotlin.service
  */
 class ProcessServicePool {
 
-    var mServiceSet : HashSet<Service>
+    var mServiceSet : HashSet<Service<*>>
 
     init {
-        mServiceSet = HashSet<Service>()
+        mServiceSet = HashSet<Service<*>>()
     }
 
-    internal fun add(service : Service){
+    internal fun add(service : Service<*>){
         mServiceSet.add(service)
     }
 
-    internal fun remove(service: Service){
+    internal fun remove(service: Service<*>){
         mServiceSet.remove(service)
     }
 
-    public fun cancel(service: Service){
+    public fun cancel(service: Service<*>){
         service.cancel()
         remove(service)
     }
 
     public fun cancelAllService(){
-        for (s : Service in mServiceSet) {
+        for (s : Service<*> in mServiceSet) {
             s.cancel();
         }
 

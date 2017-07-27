@@ -32,7 +32,8 @@ class HttpCore constructor() {
 
         var http_client: OkHttpClient = initOkHttpClient()
 
-        val base_url = ShoppingApp.getSingleton().getString(R.string.http_base_address)
+//        val base_url = ShoppingApp.getSingleton().getString(R.string.http_base_address)
+        val base_url : String = "aaaa"
         mRetrofit = Retrofit.Builder()
                 //使用自定义的mGsonConverterFactory
                 .addConverterFactory(GsonConverterFactory.create())
