@@ -1,0 +1,6 @@
+p com.huizetime.shoppingkotlin 0
+d 0/ExampleInstrumentedTest
+a org.junit.runner.RunWith 0
+c 0 0/ExampleInstrumentedTest
+a org.junit.Test 1
+m 1 0/ExampleInstrumentedTest useAppContext

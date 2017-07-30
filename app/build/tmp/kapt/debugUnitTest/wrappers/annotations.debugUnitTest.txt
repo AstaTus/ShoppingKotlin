@@ -1,0 +1,4 @@
+p com.huizetime.shoppingkotlin 0
+d 0/ExampleUnitTest
+a org.junit.Test 0
+m 0 0/ExampleUnitTest addition_isCorrect

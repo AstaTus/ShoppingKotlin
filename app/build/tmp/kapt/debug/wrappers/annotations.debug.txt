@@ -1,0 +1,65 @@
+p com.huizetime.shoppingkotlin.di.component 0
+d 0/ILoginActivityComponent
+a dagger.Component 0
+c 0 0/ILoginActivityComponent
+d 0/ILoginActivityComponent$DefaultImpls
+p com.huizetime.shoppingkotlin.application 1
+d 1/ShoppingApp
+a org.jetbrains.annotations.NotNull 1
+f 1 1/ShoppingApp sHttpCore$delegate
+m 1 1/ShoppingApp getSHttpCore
+f 1 1/ShoppingApp sProcessServicePool$delegate
+m 1 1/ShoppingApp getSProcessServicePool
+d 1/ShoppingApp$Companion
+m 1 1/ShoppingApp$Companion getSingleton
+p com.huizetime.shoppingkotlin.network 2
+d 2/HttpCore
+f 1 2/HttpCore mRetrofit
+m 1 2/HttpCore getMRetrofit
+m 1 2/HttpCore initOkHttpClient
+d 2/HttpObsersver
+d 2/HttpResult
+f 1 2/HttpResult message
+m 1 2/HttpResult getMessage
+a org.jetbrains.annotations.Nullable 2
+f 2 2/HttpResult data
+m 2 2/HttpResult getData
+d 2/HttpState
+d 2/NWLoginApi
+a retrofit2.http.POST 3
+m 3 2/NWLoginApi login
+m 1 2/NWLoginApi login
+d 2/NWLoginApi$DefaultImpls
+p com.huizetime.shoppingkotlin.view 3
+d 3/ILoginView
+d 3/ILoginView$DefaultImpls
+p com.huizetime.shoppingkotlin.di.module 4
+d 4/LoginActivityModule
+a dagger.Module 4
+c 4 4/LoginActivityModule
+a dagger.Provides 5
+m 5 4/LoginActivityModule providePresenter
+m 1 4/LoginActivityModule providePresenter
+m 5 4/LoginActivityModule provideView
+m 1 4/LoginActivityModule provideView
+p com.huizetime.shoppingkotlin.entity 5
+d 5/LoginEntity
+p com.huizetime.shoppingkotlin.presenter 6
+d 6/LoginPresenter
+p com.huizetime.shoppingkotlin 7
+d 7/LoginActivity
+a javax.inject.Inject 6
+f 6 7/LoginActivity mLoginPresenter
+f 1 7/LoginActivity mLoginPresenter
+m 1 7/LoginActivity getMLoginPresenter
+d 7/MainActivity
+p com.huizetime.shoppingkotlin.service 8
+d 8/IServiceCallback
+d 8/IServiceCallback$DefaultImpls
+d 8/LoginService
+d 8/ProcessServicePool
+f 1 8/ProcessServicePool mServiceSet
+m 1 8/ProcessServicePool getMServiceSet
+d 8/Service
+f 2 8/Service mObservable
+m 2 8/Service getMObservable$app_debug

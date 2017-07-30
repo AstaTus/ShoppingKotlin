@@ -1,0 +1,4 @@
+#Sat Jul 29 12:16:21 CST 2017
+base.0=E\:\\Android\\ShoppingKotlin\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
+renamed.0=classes.dex
+file.0=E\:\\Android\\ShoppingKotlin\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7\\classes.dex
