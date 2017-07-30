@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ShoppingKotlin</string>
+
+    <string name="login_username">用户名:</string>
+    <string name="login_password">密　码:</string>
+    <string name="login_error_username">您输入的账户不存在...</string>
+    <string name="login_error_password">您的密码错误</string>
+    <string name="login_remeber_password">记住账号</string>
+    <string name="login_username_hint">请输入您的账户名称</string>
+    <string name="login_password_hint">请输入您的账户密码</string>
+
+    <string name="login_support_info">技术支持 慧泽时代（上海）网络新技术有限公司</string>
 </resources>
