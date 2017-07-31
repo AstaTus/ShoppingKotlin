@@ -5,4 +5,9 @@ package com.huizetime.shoppingkotlin.bluetooth.search;
  */
 
 public interface ISearchCallback {
+    void onStart();
+
+    void onSearching(SearchResult result);
+
+    void onComplete();
 }

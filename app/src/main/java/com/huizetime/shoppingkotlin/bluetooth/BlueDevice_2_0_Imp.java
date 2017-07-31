@@ -5,4 +5,6 @@ package com.huizetime.shoppingkotlin.bluetooth;
  */
 
 public class BlueDevice_2_0_Imp {
+
+
 }
