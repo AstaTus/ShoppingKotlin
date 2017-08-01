@@ -16,7 +16,11 @@ import org.reactivestreams.Subscription
  */
 
 
-public class LoginService<T> : Service<T>() {
+public class LoginService<T> : Service() {
+
+    internal var mObservable : Observable<HttpResult<T>>? = null
+
+
 
     fun login(user_name : String, password : String, callback : IServiceCallback<T>){
         var login_api : NWLoginApi = ShoppingApp.getSingleton().sHttpCore.createApi(NWLoginApi::class.java)
@@ -29,5 +33,9 @@ public class LoginService<T> : Service<T>() {
 
         mObservable?.subscribe(observer)
 
+    }
+
+    override fun cancel() {
+        mObservable?.unsubscribeOn(Schedulers.io())
     }
 }

@@ -31,7 +31,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:25.+'
+    implementation 'com.android.support:appcompat-v7:25+'
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -48,6 +48,6 @@ dependencies {
     kapt  'com.google.dagger:dagger-android-processor:2.11'
     kapt 'com.google.dagger:dagger-compiler:2.11'
 
-
+    implementation 'com.clj.fastble:FastBleLib:1.2.1'
 
 }
