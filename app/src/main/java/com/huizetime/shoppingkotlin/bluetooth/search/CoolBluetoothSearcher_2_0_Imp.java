@@ -19,14 +19,15 @@ public class CoolBluetoothSearcher_2_0_Imp implements ICoolBluetoothSearcher {
     private Context mContext;
     private ISearchCallback mSearchCallback;
 
-    public CoolBluetoothSearcher_2_0_Imp(BluetoothAdapter adapter, Context context, ISearchCallback callback){
+    public CoolBluetoothSearcher_2_0_Imp(BluetoothAdapter adapter, Context context){
         super();
         mBluetoothAdapter = adapter;
         mContext = context;
-        mSearchCallback = callback;
+
     }
     @Override
     public void search(ISearchCallback callback) {
+        mSearchCallback = callback;
 
         IntentFilter intent_filter = new IntentFilter();
         intent_filter.addAction(BluetoothDevice.ACTION_FOUND);
@@ -65,7 +66,7 @@ public class CoolBluetoothSearcher_2_0_Imp implements ICoolBluetoothSearcher {
             }else if (BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)){
                 mSearchCallback.onStart();
             }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)){
-                mSearchCallback.onComplete();
+                //mSearchCallback.onComplete();
             }
 //            } else if (BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)) {
 //                // 获取蓝牙设备的连接状态

@@ -4,20 +4,24 @@ import android.bluetooth.BluetoothDevice;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.huizetime.shoppingkotlin.bluetooth.BluetoothType;
+import com.huizetime.shoppingkotlin.bluetooth.exception.BlueTooth20NoScanRecordException;
+
 /**
  * Created by Administrator on 2017/7/31.
  */
 
 public class SearchResult implements Parcelable{
+    private BluetoothType mType;
     private BluetoothDevice mDevice;
     private byte[] mScanRecord;
     private int mRssi;
     private long mTimestampNanos;
 
-    public SearchResult(BluetoothDevice device, int rssi,byte[] scanRecord,
+    public SearchResult(BluetoothDevice device, int rssi, byte[] scan_record,
                       long timestampNanos) {
         mDevice = device;
-        mScanRecord = scanRecord;
+        mScanRecord = scan_record;
         mRssi = rssi;
         mTimestampNanos = timestampNanos;
     }
@@ -28,7 +32,10 @@ public class SearchResult implements Parcelable{
         mScanRecord = in.createByteArray();
         mRssi = in.readInt();
         mTimestampNanos = in.readLong();
+        mType = (BluetoothType)in.readSerializable();
     }
+
+
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -36,6 +43,7 @@ public class SearchResult implements Parcelable{
         dest.writeByteArray(mScanRecord);
         dest.writeInt(mRssi);
         dest.writeLong(mTimestampNanos);
+        dest.writeSerializable(mType);
     }
 
     @Override
@@ -63,7 +71,10 @@ public class SearchResult implements Parcelable{
         this.mDevice = device;
     }
 
-    public byte[] getScanRecord() {
+    public byte[] getScanRecord() throws BlueTooth20NoScanRecordException {
+        if (mType == BluetoothType.BLUETOOTH_2_0)
+            throw new BlueTooth20NoScanRecordException();
+
         return mScanRecord;
     }
 
@@ -86,4 +97,8 @@ public class SearchResult implements Parcelable{
     public void setTimestampNanos(long timestampNanos) {
         this.mTimestampNanos = timestampNanos;
     }
+
+    public BluetoothType getBlueType(){return mType;}
+
+    public void setBlueType(BluetoothType type){mType = type;}
 }
