@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 
+import com.huizetime.shoppingkotlin.bluetooth.BlueDevice_2_0_Imp;
+
 /**
  * Created by Administrator on 2017/7/31.
  *
@@ -61,12 +63,15 @@ public class CoolBluetoothSearcher_2_0_Imp implements ICoolBluetoothSearcher {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 int rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI,Short.MIN_VALUE);
 
+                SearchResult r = new SearchResult(device, rssi, null, System.currentTimeMillis());
+                BlueDevice_2_0_Imp blue_device = new BlueDevice_2_0_Imp(r);
+                mSearchCallback.onBL20Searching(blue_device);
                 //mSearchCallback.onSearching(intent);
 
             }else if (BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)){
                 mSearchCallback.onStart();
             }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)){
-                //mSearchCallback.onComplete();
+                mSearchCallback.onComplete();
             }
 //            } else if (BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)) {
 //                // 获取蓝牙设备的连接状态

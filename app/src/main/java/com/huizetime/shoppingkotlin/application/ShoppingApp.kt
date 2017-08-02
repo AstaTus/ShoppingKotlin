@@ -1,6 +1,7 @@
 package com.huizetime.shoppingkotlin.application
 
 import android.app.Application
+import com.clj.fastble.BleManager
 import com.huizetime.shoppingkotlin.network.HttpCore
 import com.huizetime.shoppingkotlin.service.ProcessServicePool
 import com.orhanobut.logger.AndroidLogAdapter
@@ -23,6 +24,8 @@ class ShoppingApp private constructor () : Application() {
             if (sSingleton == null)
                 sSingleton = ShoppingApp()
 
+
+
             return sSingleton as ShoppingApp
         }
     }
@@ -34,10 +37,11 @@ class ShoppingApp private constructor () : Application() {
     public override fun onCreate() {
         super.onCreate()
 
-
         initLogger()
 
     }
+
+    public override fun onDes
 
     private fun initGlobals(){
 

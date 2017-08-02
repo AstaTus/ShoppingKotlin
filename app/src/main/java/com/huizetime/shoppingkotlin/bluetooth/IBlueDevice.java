@@ -7,12 +7,9 @@ import java.util.UUID;
  */
 
 interface IBlueDevice {
-    void connect(UUID service_uuid, IConnectCallback callback);
-
+    void connect(UUID service_uuid, boolean read_enable, IDeviceCallback callback) throws Exception;
 
     void disconnect();
 
     void write(byte[] data);
-
-    void onRead(byte[] bytes);
 }

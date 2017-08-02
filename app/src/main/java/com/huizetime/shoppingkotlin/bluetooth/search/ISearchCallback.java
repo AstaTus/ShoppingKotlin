@@ -1,5 +1,8 @@
 package com.huizetime.shoppingkotlin.bluetooth.search;
 
+import com.huizetime.shoppingkotlin.bluetooth.BlueDevice_2_0_Imp;
+import com.huizetime.shoppingkotlin.bluetooth.BlueDevice_4_0_Imp;
+
 import java.util.List;
 
 /**
@@ -9,7 +12,10 @@ import java.util.List;
 public interface ISearchCallback {
     void onStart();
 
-    void onSearching(SearchResult result);
+    void onBL40Searching(BlueDevice_4_0_Imp device);
 
-    void onComplete(List<SearchResult> results);
+    void onBL20Searching(BlueDevice_2_0_Imp device);
+
+
+    void onComplete();
 }

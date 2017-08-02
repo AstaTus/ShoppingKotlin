@@ -4,7 +4,6 @@ import android.app.Activity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.huizetime.shoppingkotlin.di.component.DaggerILoginActivityComponent
-import com.huizetime.shoppingkotlin.di.component.ILoginActivityComponent
 import com.huizetime.shoppingkotlin.di.module.LoginActivityModule
 import com.huizetime.shoppingkotlin.presenter.LoginPresenter
 import com.huizetime.shoppingkotlin.view.ILoginView
@@ -22,9 +21,6 @@ class LoginActivity : Activity(), ILoginView {
         setContentView(R.layout.activity_login)
 
         DaggerILoginActivityComponent.builder().loginActivityModule(LoginActivityModule(this)).build()
-
-
-        //var component : ILoginActivityComponent = Dagger
     }
 
 }
