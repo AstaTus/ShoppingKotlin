@@ -41,7 +41,6 @@ class ShoppingApp private constructor () : Application() {
 
     }
 
-    public override fun onDes
 
     private fun initGlobals(){
 

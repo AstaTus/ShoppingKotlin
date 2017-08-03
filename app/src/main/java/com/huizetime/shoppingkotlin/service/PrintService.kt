@@ -38,7 +38,7 @@ class PrintService : Service() {
     }
 
     fun print(message : String){
-        mBleManager.writeDevice(UUID_SERVICE, )
+        //mBleManager.writeDevice(UUID_SERVICE, )
     }
 
     fun scan(callback : IServiceStepCallback<BlueToothDeviceEntity>){
@@ -62,45 +62,7 @@ class PrintService : Service() {
         mBleManager.cancelScan();
     }
 
-    fun connect(address : String) {
-        val r : ScanResult? = mScanResults.get(address)
-        if (r == null)
-            throw InvalidParameterException("address i null");
-
-        mBleManager.connectDevice(r, true, object : BleGattCallback() {
-
-            override fun onConnecting(gatt: BluetoothGatt?, status: Int) {
-                val services: List<BluetoothGattService> =  gatt?.services()
-            }
-
-            override fun onConnectError(exception: BleException) {
-
-            }
-
-            override fun onConnectSuccess(gatt: BluetoothGatt, status: Int) {
-
-            }
-
-            override fun onServicesDiscovered(gatt: BluetoothGatt, status: Int) {
-
-            }
-
-            override fun onDisConnected(gatt: BluetoothGatt, status: Int, exception: BleException) {
-
-            }
-
-        })
-    }
-
     fun disconnect(){
-
-    }
-
-    fun isConnect(): Boolean{
-
-    }
-
-    fun getDeviceEntity() : BlueToothDeviceEntity{
 
     }
 

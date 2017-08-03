@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class BlueDevice_2_0_Imp implements IBlueDevice {
 
-    private SearchResult mSearchResult = null;
+    public SearchResult mSearchResult = null;
     private BluetoothSocket mSocket =  null;
 
     private OutputStream mOutputStream = null;
@@ -64,6 +64,7 @@ public class BlueDevice_2_0_Imp implements IBlueDevice {
         try {
             mOutputStream.close();
             mSocket.close();
+            mReadObservable.unsubscribeOn(Schedulers.io());
             mCallback.onDisConnected();
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,5 +1,6 @@
 package com.huizetime.shoppingkotlin.device;
 
+import android.os.Binder
 import com.huizetime.shoppingkotlin.bluetooth.BlueDevice_2_0_Imp
 import com.huizetime.shoppingkotlin.bluetooth.IDeviceCallback
 import com.huizetime.shoppingkotlin.bluetooth.StandardUUID
@@ -9,6 +10,13 @@ import com.huizetime.shoppingkotlin.bluetooth.StandardUUID
  */
 
 public class Printer(device: BlueDevice_2_0_Imp) {
+
+    private var mDevice : BlueDevice_2_0_Imp;
+
+    init {
+        mDevice = device
+    }
+
     companion object {
 
         //格式
@@ -43,11 +51,7 @@ public class Printer(device: BlueDevice_2_0_Imp) {
 //            byteArrayOf(0x1b, 0x56, 0x00), // 取消顺时针旋转90°
 //            byteArrayOf(0x1b, 0x56, 0x01))// 选择顺时针旋转90°
 
-    private var mDevice : BlueDevice_2_0_Imp;
 
-    init {
-        mDevice = device
-    }
 
     public fun init(callback: IDeviceCallback){
         mDevice.connect(StandardUUID.SERIAL_PORT_UUID, false, callback)

@@ -15,6 +15,6 @@ class ICReader(device : BlueDevice_2_0_Imp) {
     }
 
     public fun init(){
-        mDevice.connect(StandardUUID.SERIAL_PORT_UUID, false, )
+        //mDevice.connect(StandardUUID.SERIAL_PORT_UUID, false, )
     }
 }

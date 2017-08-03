@@ -24,7 +24,7 @@ public class CoolBluetoothManager {
     private ICoolBluetoothSearcher mCoolBluetoothSearcher_2_0_Imp;
     private ICoolBluetoothSearcher mCoolBluetoothSearcher_4_0_Imp;
 
-    CoolBluetoothManager(Context context){
+    public CoolBluetoothManager(Context context){
         this.mContext = context.getApplicationContext();
         BluetoothManager bluetoothManager = (BluetoothManager) context
                 .getSystemService(Context.BLUETOOTH_SERVICE);

@@ -6,7 +6,9 @@ package com.huizetime.shoppingkotlin.provider;
 
 interface IProviderCallback<T> {
 
-    fun onSuccess(entity : T)
+    fun onHandleSuccess(entity : T)
 
-    fun onFailure()
+    fun onHandleFailure()
+
+    fun onError()
 }
