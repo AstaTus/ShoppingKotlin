@@ -21,6 +21,4 @@ class LoginEntity(){
     private var encrypt : Boolean = false
         get
         set
-
-
 }

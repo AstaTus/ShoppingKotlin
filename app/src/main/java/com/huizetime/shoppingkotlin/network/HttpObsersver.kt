@@ -1,6 +1,5 @@
 package com.huizetime.shoppingkotlin.network
 
-import com.huizetime.shoppingkotlin.service.IServiceCallback
 import com.orhanobut.logger.Logger
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
@@ -9,9 +8,9 @@ import io.reactivex.disposables.Disposable
  * Created by chenjunqi on 2017/7/26.
  */
 
-class  HttpObsersver<T>(callback : IServiceCallback<T>) : Observer<HttpResult<T>>{
+class  HttpObsersver<T>(callback : IServiceEntityCallback<T>) : Observer<HttpResult<T>>{
 
-    private var mCallback : IServiceCallback<T> = callback
+    private var mCallback : IServiceEntityCallback<T> = callback
 
     private var mDisposable : Disposable? = null
 
